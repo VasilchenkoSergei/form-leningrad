@@ -50,6 +50,13 @@ gulp.task('pug', function() {
 gulp.task('sass', function() {
     return gulp.src('src/scss/*.scss')
     .pipe(sass())
+    .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+    .pipe(csslint())
+    .pipe(cssnano())
+    .pipe(concat('style.css'))
     .pipe(gulp.dest('src/css/'))
     .pipe(browserSync.stream());
 });

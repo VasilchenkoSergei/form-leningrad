@@ -1,0 +1,24 @@
+section.form-block
+	.form-block__container.container
+		.form-block__box.form-box
+			h1.form-box__title Форма авторизации
+			form(action="#" method="POST").form
+				label
+					input(type="text"
+							name="user-mail"
+							placeholder="Ваша почта"
+							required
+						).form__mail.form__input
+				label
+					input(type="password"
+							name="user-password"
+							placeholder="Ваш пароль"
+							required
+						).form__password.form__input
+				label
+					input(type="checkbox"
+							required
+						).form__checkbox
+					span.form__checkbox--custom
+					span.form__checkbox-text Продолжительность сессии не более 1 часа
+				button(type="submit").form__btn Отправить

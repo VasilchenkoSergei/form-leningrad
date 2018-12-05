@@ -1,0 +1,104 @@
+.form-box {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  border: 4px solid $border-color;
+  padding: 30px;
+  margin-top: 50px;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+
+.form {
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 4px solid $form-line-color;
+    width: 100%;
+    margin-bottom: 40px;
+    transition: border-bottom 0.7s;
+
+    &:hover {
+      border-bottom: 4px solid $btn-color-hover;
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 200px;
+    height: 50px;
+    background-color: $btn-color;
+    border: none;
+    color: #fff;
+    margin: 40px auto 0 auto;
+    transition: background-color 0.7s;
+
+    &:hover {
+      background-color: $btn-color-hover;
+    }
+
+    &:visited {
+      background-color: $btn-color-visited;
+    }
+
+    @media (min-width: $screen-md) {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked + .form__checkbox--custom:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      bottom: 2px;
+      left: 2px;
+      background: #000;
+    }
+
+    &--custom {
+      display: inline-block;
+      vertical-align: top;
+      width: 20px;
+      height: 20px;
+      border: 4px solid $form-line-color;
+      position: relative;
+
+      &:hover {
+        border: 4px solid $btn-color-hover;
+      }
+    }
+  }
+
+  &__checkbox-text {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    padding-left: 10px;
+  }
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+label {
+  text-align: left;
+
+  @media (min-width: $screen-md) {
+    width: 50%;
+    padding: 0 20px;
+  }
+}
